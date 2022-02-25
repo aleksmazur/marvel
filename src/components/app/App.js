@@ -6,10 +6,10 @@ import CharList from '../charList/CharList';
 import RandomChar from '../randomChar/RandomChar';
 
 import decoration from '../../resources/img/first_bg.png';
-import Skeleton from '../skeleton/Skeleton';
 import AppBanner from '../appBanner/AppBanner';
 import ComicsList from '../comicsList/ComicsList';
 import SingleComic from '../singleComic/SingleComic';
+import ErrorBoundary from '../errorBoundary/ErrorBoundary';
 
 class App extends Component {
   state = {
@@ -30,9 +30,10 @@ class App extends Component {
           <RandomChar/>
           <div className="char__content">
             <CharList onCharSelected={this.onCharSelected}/>
-            <CharInfo charId={this.state.selectedChar}/>
+            <ErrorBoundary>
+              <CharInfo charId={this.state.selectedChar}/>
+            </ErrorBoundary>
           </div>
-          <Skeleton/>
           <img src={decoration} alt="" className="bg-decoration" />
         </main>
         <AppBanner/>
