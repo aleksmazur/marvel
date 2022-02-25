@@ -1,4 +1,4 @@
-import {Component} from 'react';
+import React, {Component} from 'react';
 
 import AppHeader from '../appHeader/AppHeader';
 import CharInfo from '../charInfo/CharInfo';
